@@ -1,0 +1,23 @@
+{% extends 'women/base.html' %}
+
+{% block content %}
+
+<form  method="post">
+
+    {% csrf_token %}
+    
+    {% for f in form %}
+
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}</label>{{ f }}</p>
+
+    <div class="alert alert-light" role="alert">
+        {{ f.errors }}
+    </div>
+
+    {% endfor %}
+
+    <button type="submit" class="btn btn-outline-secondary">Регистрация</button>
+
+</form>
+
+{%endblock%}

@@ -1,0 +1,22 @@
+
+  
+
+
+
+      {% for c in cats %}
+
+      {% if c.pk == cat_selected  %}
+
+      <p class="link-primary ">{{c.name}}</p>
+     
+    
+      {% else %}
+
+     
+      <p><a class="link-secondary " href="{{ c.get_absolute_url }}">{{c.name}}</a></p>
+     
+      {% endif %}
+      
+      {% endfor %}
+
+    
